@@ -1,10 +1,14 @@
 using System;
-using EpolSoft.WebAPI.Utils;
+using System.Net;
+using System.Text.Json;
+using EpolSoft.WebAPI.DTOs;
 using EpolSoft.WebAPI.Utils.Filters;
 using FluentValidation.AspNetCore;
 using MicroElements.Swashbuckle.FluentValidation;
 using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Diagnostics;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -59,6 +63,36 @@ namespace EpolSoft.WebAPI
 
                 // Automaticaly migrating db in dev env (automigrations from ef is evil)
                 UpdateDatabase(app);
+
+                app.UseExceptionHandler(a => a.Run(async context =>
+                {
+                    var message = context.Features.Get<IExceptionHandlerPathFeature>().Error.Message;
+
+                    var response = new Response
+                    {
+                        Success = false,
+                        ErrorMessage = message
+                    };
+
+                    context.Response.StatusCode = (int)HttpStatusCode.InternalServerError;
+                    await context.Response.WriteAsync(JsonSerializer.Serialize(response));
+                }));
+            }
+
+            if (!env.IsDevelopment())
+            {
+                app.UseExceptionHandler(a => a.Run(async context =>
+                {
+
+                    var response = new Response()
+                    {
+                        Success = false,
+                        ErrorMessage = "Inner Exception"
+                    };
+
+                    context.Response.StatusCode = (int) HttpStatusCode.InternalServerError;
+                    await context.Response.WriteAsync(JsonSerializer.Serialize(response));
+                }));
             }
 
             app.UseHttpsRedirection();
