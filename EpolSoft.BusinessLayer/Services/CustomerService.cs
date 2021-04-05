@@ -36,14 +36,12 @@ namespace EpolSoft.BusinessLayer.Services
             var mappedCustomer = _mapper.Map<DataAccessLayer.Model.Customer>(customer);
 
             // generate a 128-bit salt using a secure PRNG
-            byte[] salt = new byte[128 / 8];
-            using (var rng = RandomNumberGenerator.Create())
-            {
-                rng.GetBytes(salt);
-            }
+            var salt = new byte[128 / 8];
+            using var rng = RandomNumberGenerator.Create();
+            rng.GetBytes(salt);
 
             // derive a 256-bit subkey (use HMACSHA1 with 10,000 iterations)
-            string hash = Convert.ToBase64String(KeyDerivation.Pbkdf2(
+            var hash = Convert.ToBase64String(KeyDerivation.Pbkdf2(
                 password: mappedCustomer.Password,
                 salt: salt,
                 prf: KeyDerivationPrf.HMACSHA1,
@@ -81,6 +79,7 @@ namespace EpolSoft.BusinessLayer.Services
             dbUser.PhoneNumber1 = customer.PhoneNumber1 ?? dbUser.PhoneNumber1;
             dbUser.Town = customer.Town ?? dbUser.Town;
             dbUser.Postcode = customer.Postcode ?? dbUser.Postcode;
+            dbUser.DateChanged = customer.DateChanged ?? dbUser.DateChanged;
 
             var entity = _unitOfWork.CustomerRepository.Update(dbUser);
             await _unitOfWork.SaveAsync();

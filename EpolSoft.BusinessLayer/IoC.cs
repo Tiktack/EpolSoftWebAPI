@@ -1,4 +1,5 @@
-﻿using EpolSoft.BusinessLayer.Services;
+﻿using System;
+using EpolSoft.BusinessLayer.Services;
 using EpolSoft.BusinessLayer.Services.Interfaces;
 using EpolSoft.DataAccessLayer;
 using Microsoft.Extensions.Configuration;
@@ -13,6 +14,8 @@ namespace EpolSoft.BusinessLayer
             serviceCollection.AddScoped<ICustomerService, CustomerService>();
 
             serviceCollection.RegisterDataAccessLayer(configuration);
+
+            serviceCollection.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
             return serviceCollection;
         }

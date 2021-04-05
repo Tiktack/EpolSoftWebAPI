@@ -14,7 +14,7 @@ namespace EpolSoft.BusinessLayer.Entities
         public string Town { get; set; }
         public string PhoneNumber1 { get; set; }
         public string EmailAddress { get; set; }
-        public DateTime DateChanged { get; set; }
+        public DateTime? DateChanged { get; set; }
         public string UpdatedBy { get; set; }
     }
 }

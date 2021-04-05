@@ -39,6 +39,7 @@ namespace EpolSoft.WebAPI
             {
                 c.RegisterValidatorsFromAssemblyContaining<Startup>();
                 c.ValidatorFactoryType = typeof(HttpContextServiceProviderValidatorFactory);
+                c.RunDefaultMvcValidationAfterFluentValidationExecutes = false;
             });
             services.AddSwaggerGen(c =>
             {
