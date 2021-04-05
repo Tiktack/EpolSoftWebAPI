@@ -1,0 +1,55 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30615.102
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EpolSoft.WebAPI", "EpolSoftWebAPI\EpolSoft.WebAPI.csproj", "{50163DF8-F52A-4A5B-8A92-53595A5DA1B5}"
+	ProjectSection(ProjectDependencies) = postProject
+		{C96120EB-9328-4908-8F36-094CFD856619} = {C96120EB-9328-4908-8F36-094CFD856619}
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EpolSoft.DataAccessLayer", "EpolSoft.DataAccessLayer\EpolSoft.DataAccessLayer.csproj", "{A95F9E43-60CA-4491-B6BA-8B5C688B5340}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EpolSoft.BusinessLayer", "EpolSoft.BusinessLayer\EpolSoft.BusinessLayer.csproj", "{C96120EB-9328-4908-8F36-094CFD856619}"
+	ProjectSection(ProjectDependencies) = postProject
+		{1A5BEA40-FDE6-493E-B2E3-A83F2C2D8660} = {1A5BEA40-FDE6-493E-B2E3-A83F2C2D8660}
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EpolSoft.Common", "EpolSoft.Common\EpolSoft.Common.csproj", "{1A5BEA40-FDE6-493E-B2E3-A83F2C2D8660}"
+EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{48D3FF20-340B-466A-A64C-9A220128A0FC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{50163DF8-F52A-4A5B-8A92-53595A5DA1B5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{50163DF8-F52A-4A5B-8A92-53595A5DA1B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{50163DF8-F52A-4A5B-8A92-53595A5DA1B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{50163DF8-F52A-4A5B-8A92-53595A5DA1B5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A95F9E43-60CA-4491-B6BA-8B5C688B5340}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A95F9E43-60CA-4491-B6BA-8B5C688B5340}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A95F9E43-60CA-4491-B6BA-8B5C688B5340}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A95F9E43-60CA-4491-B6BA-8B5C688B5340}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C96120EB-9328-4908-8F36-094CFD856619}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C96120EB-9328-4908-8F36-094CFD856619}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C96120EB-9328-4908-8F36-094CFD856619}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C96120EB-9328-4908-8F36-094CFD856619}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1A5BEA40-FDE6-493E-B2E3-A83F2C2D8660}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1A5BEA40-FDE6-493E-B2E3-A83F2C2D8660}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1A5BEA40-FDE6-493E-B2E3-A83F2C2D8660}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1A5BEA40-FDE6-493E-B2E3-A83F2C2D8660}.Release|Any CPU.Build.0 = Release|Any CPU
+		{48D3FF20-340B-466A-A64C-9A220128A0FC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{48D3FF20-340B-466A-A64C-9A220128A0FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{48D3FF20-340B-466A-A64C-9A220128A0FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{48D3FF20-340B-466A-A64C-9A220128A0FC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E14633FE-1582-4177-9068-07CCF3B83D2E}
+	EndGlobalSection
+EndGlobal
