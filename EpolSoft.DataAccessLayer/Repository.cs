@@ -1,7 +1,8 @@
 ﻿using System.Linq;
+using EpolSoft.DataAccessLayer.Interfaces;
 using Microsoft.EntityFrameworkCore;
 
-namespace EpolSoft.DataAccessLayer.Interfaces
+namespace EpolSoft.DataAccessLayer
 {
     internal class Repository<TEntity> : IRepository<TEntity>
         where TEntity : class

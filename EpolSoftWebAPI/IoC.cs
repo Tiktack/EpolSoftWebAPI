@@ -1,13 +1,14 @@
-﻿using Microsoft.Extensions.Configuration;
+﻿using EpolSoft.BusinessLayer;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace EpolSoft.WebAPI.Configure
+namespace EpolSoft.WebAPI
 {
     public static class IoC
     {
-        public static IServiceCollection RegisterServies(this IServiceCollection serviceCollection, IConfiguration configuration)
+        public static IServiceCollection RegisterWeb(this IServiceCollection serviceCollection, IConfiguration configuration)
         {
-            return serviceCollection.RegisterServies(configuration);
+            return serviceCollection.RegisterBusinessLayer(configuration);
         }
     }
 }

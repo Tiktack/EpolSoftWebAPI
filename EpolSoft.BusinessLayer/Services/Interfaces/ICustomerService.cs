@@ -2,7 +2,7 @@
 using System.Threading.Tasks;
 using EpolSoft.BusinessLayer.Entities;
 
-namespace EpolSoft.BusinessLayer.Services
+namespace EpolSoft.BusinessLayer.Services.Interfaces
 {
     public interface ICustomerService
     {

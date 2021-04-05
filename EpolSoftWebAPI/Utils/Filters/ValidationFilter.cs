@@ -4,7 +4,7 @@ using EpolSoft.WebAPI.DTOs;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
 
-namespace EpolSoft.WebAPI.Utils
+namespace EpolSoft.WebAPI.Utils.Filters
 {
     internal class ValidationFilter : IAsyncActionFilter
     {

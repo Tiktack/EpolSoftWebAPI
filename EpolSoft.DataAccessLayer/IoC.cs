@@ -3,11 +3,11 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace EpolSoft.DataAccessLayer.Configure
+namespace EpolSoft.DataAccessLayer
 {
     public static class IoC
     {
-        public static IServiceCollection RegisterServies(this IServiceCollection serviceCollection, IConfiguration configuration)
+        public static IServiceCollection RegisterDataAccessLayer(this IServiceCollection serviceCollection, IConfiguration configuration)
         {
             serviceCollection.AddScoped<IUnitOfWork, UnitOfWork>();
             serviceCollection.AddScoped(typeof(IRepository<>), typeof(Repository<>));

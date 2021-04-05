@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using AutoMapper;
 using AutoMapper.QueryableExtensions;
 using EpolSoft.BusinessLayer.Entities;
+using EpolSoft.BusinessLayer.Services.Interfaces;
 using EpolSoft.DataAccessLayer.Interfaces;
 using Microsoft.AspNetCore.Cryptography.KeyDerivation;
 using Microsoft.EntityFrameworkCore;
