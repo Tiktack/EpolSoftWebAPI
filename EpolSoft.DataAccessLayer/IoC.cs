@@ -5,9 +5,9 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace EpolSoft.DataAccessLayer.Configure
 {
-    public static class Configure
+    public static class IoC
     {
-        public static IServiceCollection RegisterServies(IServiceCollection serviceCollection, IConfiguration configuration)
+        public static IServiceCollection RegisterServies(this IServiceCollection serviceCollection, IConfiguration configuration)
         {
             serviceCollection.AddScoped<IUnitOfWork, UnitOfWork>();
             serviceCollection.AddScoped(typeof(IRepository<>), typeof(Repository<>));

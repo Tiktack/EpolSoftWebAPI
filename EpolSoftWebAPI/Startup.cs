@@ -1,4 +1,5 @@
 using System;
+using EpolSoft.WebAPI.Configure;
 using EpolSoft.WebAPI.Utils;
 using FluentValidation.AspNetCore;
 using MicroElements.Swashbuckle.FluentValidation;
@@ -44,8 +45,7 @@ namespace EpolSoft.WebAPI
             services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
             services.AddHealthChecks();
 
-
-            WebAPI.Configure.Configure.RegisterServies(services, Configuration);
+            services.RegisterServies(Configuration);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

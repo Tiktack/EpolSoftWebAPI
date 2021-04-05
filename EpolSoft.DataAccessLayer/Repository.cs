@@ -3,8 +3,8 @@ using Microsoft.EntityFrameworkCore;
 
 namespace EpolSoft.DataAccessLayer.Interfaces
 {
-    class Repository<TEntity> : IRepository<TEntity> 
-        where TEntity: class
+    internal class Repository<TEntity> : IRepository<TEntity>
+        where TEntity : class
     {
         private readonly DbSet<TEntity> _dbSet;
 

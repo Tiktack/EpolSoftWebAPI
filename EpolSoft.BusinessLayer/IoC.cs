@@ -5,15 +5,14 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace EpolSoft.BusinessLayer.Configure
 {
-    public static class Configure
+    public static class IoC
     {
-        public static IServiceCollection RegisterServies(IServiceCollection serviceCollection, IConfiguration configuration)
+        public static IServiceCollection RegisterServies(this IServiceCollection serviceCollection, IConfiguration configuration)
         {
             serviceCollection.AddScoped<ICustomerService, CustomerService>();
-            var a = AppDomain.CurrentDomain.GetAssemblies();
             serviceCollection.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
-            DataAccessLayer.Configure.Configure.RegisterServies(serviceCollection, configuration);
+            serviceCollection.RegisterServies(configuration);
 
             return serviceCollection;
         }

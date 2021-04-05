@@ -9,6 +9,6 @@
         public const string LowercaseLetter = "Property must have at least one lowercase letter";
         public const string Digit = "Property must have at least one digit";
         public const string NotValidEmail = "Email is not valid";
-        
+
     }
 }

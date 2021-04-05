@@ -3,7 +3,7 @@ using EpolSoft.BusinessLayer.Entities;
 
 namespace EpolSoft.BusinessLayer.Mappers
 {
-    class CustomerMapper: Profile
+    internal class CustomerMapper : Profile
     {
         public CustomerMapper()
         {

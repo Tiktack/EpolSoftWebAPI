@@ -24,7 +24,10 @@ namespace EpolSoft.BusinessLayer.Services
         }
 
         /// <inheritdoc/>
-        public IImmutableList<Customer> GetAll() => _unitOfWork.CustomerRepository.Get().ProjectTo<Customer>(_mapper.ConfigurationProvider).ToImmutableList();
+        public IImmutableList<Customer> GetAll()
+        {
+            return _unitOfWork.CustomerRepository.Get().ProjectTo<Customer>(_mapper.ConfigurationProvider).ToImmutableList();
+        }
 
         /// <inheritdoc/>
         public async Task<Customer> Add(Customer customer)
